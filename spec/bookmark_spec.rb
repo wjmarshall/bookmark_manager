@@ -15,4 +15,11 @@ describe Bookmark do
       ])
     end
   end
+
+  describe "::create" do
+    it "creates a new bookmark" do
+      Bookmark.create(url: "http://www.youtube.com")
+      expect(Bookmark.all).to eq(["http://www.youtube.com"])
+    end
+  end
 end
